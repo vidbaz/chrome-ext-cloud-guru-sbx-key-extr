@@ -25,6 +25,12 @@ document.getElementById('copy-credentials').addEventListener('click', () => {
   const awsSecretAccessKey = document.getElementById('secret-access-key').textContent;
   const formattedCredentials = `export AWS_ACCESS_KEY_ID=${awsAccessKeyId}\nexport AWS_SECRET_ACCESS_KEY=${awsSecretAccessKey}`;
   navigator.clipboard.writeText(formattedCredentials).then(() => {
-    alert('AWS credentials copied to clipboard');
+    const copyMessage = document.getElementById('copy-message');
+    copyMessage.style.display = 'inline';
+    copyMessage.textContent = 'AWS credentials copied to clipboard.';
+    setTimeout(() => {
+      copyMessage.style.display = 'none';
+    }, 2000);
   });
 });
+

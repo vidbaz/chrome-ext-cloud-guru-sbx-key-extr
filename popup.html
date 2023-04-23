@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      body {
-        width: 300px;
-        font-family: Arial, sans-serif;
-      }
-      button {
-        margin-bottom: 10px;
-      }
-    </style>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Credentials</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
   <body>
     <h1>AWS Credentials</h1>
     <button id="get-credentials">Refresh</button>
-    <button id="copy-credentials">Copy AWS Credentials</button>
+    <button id="copy-credentials" class="btn btn-primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M5 1a1 1 0 0 0-1 1v1H1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3.8a2.98 2.98 0 0 0 .326 0h6.748a1 1 0 0 0 .962-.74l1.2-5a1 1 0 0 0-.04-.923l-.982-4A1 1 0 0 0 12.743 1H6V2a1 1 0 1 0 2 0V1H5zm-3 4h10a1 1 0 0 0 .995.9l.865 3.6H.14l.865-3.6A1 1 0 0 0 2 5zm11 0h1.287l-.863 3.6a1 1 0 0 0-.036.4v.1H2.612v-.1a1 1 0 0 0-.036-.4l-.863-3.6H3a1 1 0 1 1 0-2h8a1 1 0 1 1 0 2z"/>
+      </svg>
+      Copy AWS Credentials
+    </button>    
     <div id="credentials">
       <p>export AWS_ACCESS_KEY_ID= <span id="access-key-id">N/A</span></p>
       <p>export AWS_SECRET_ACCESS_KEY= <span id="secret-access-key">N/A</span></p>
     </div>
     <script src="popup.js"></script>
+    <span id="copy-message" class="text-success" style="display:none;"></span>
   </body>
 </html>
