@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('copy-credentials').addEventListener('click', () => {
   const awsAccessKeyId = document.getElementById('access-key-id').textContent;
   const awsSecretAccessKey = document.getElementById('secret-access-key').textContent;
-  const formattedCredentials = `export AWS_ACCESS_KEY_ID=${awsAccessKeyId}\nexport AWS_SECRET_ACCESS_KEY=${awsSecretAccessKey}`;
+  const formattedCredentials = `export AWS_DEFAULT_REGION=us-east-1\nexport AWS_ACCESS_KEY_ID=${awsAccessKeyId}\nexport AWS_SECRET_ACCESS_KEY=${awsSecretAccessKey}`;
   navigator.clipboard.writeText(formattedCredentials).then(() => {
     const copyMessage = document.getElementById('copy-message');
     copyMessage.style.display = 'inline';
